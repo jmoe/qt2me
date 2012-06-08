@@ -1,7 +1,9 @@
 .container
-  %p Wanna receive weekly post cards of the cutest animals on the internet?
-  %p Enter your email address below and we'll let you know when the service launches.
-  = form_for @preuser, :url => '/' do |f|
-    = f.text_field :email
-    = f.submit "Sign me up!"
+  %p.nicefont Does getting weekly postcards of the cutest animals sound awesome?
+  %p.nicefont.subtitle Then enter your email address below to be notified when we launch!
+  %br  
+  = form_for @preuser, :url => '/', :class => "signup" do |f|
+    = f.text_field :email, :placeholder => "you@email.com"
+    = f.submit raw("Sign me up!"), :class => "btn btn-primary btn-large"
+  = image_tag "qt.png", :class => "qt"
   

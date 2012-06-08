@@ -2,5 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
+.nicefont{
+  font-family: 'Port Lligat Sans', sans-serif;
 }
+
+.qt{
+  width:600px;
+}
+
+.qt-thanks{
+  width:600px;
+}
+
+.container { 
+  padding-top:20px; 
+  width:800px;
+  margin:0 auto;
+  font-size:26px;
+  text-align:center;
+}
+
+.subtitle{
+  font-size:20px;
+  color:#666;
+}
+input{
+  font-size:20px;
+}
+
+input[type="submit"]{
+  font-family: 'Port Lligat Sans', sans-serif;
+  font-size:20px;
+}
+
+input[type="text"]{
+  font-family: 'Port Lligat Sans', sans-serif;
+
+  padding:8px;
+  font-size:18px;
+  border: solid 2px #aaa;
+}
+
+
