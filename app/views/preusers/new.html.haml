@@ -2,6 +2,10 @@
   %p.nicefont Does getting weekly picture postcards of the cutest animals for only a couple bucks sound awesome?
   %p.nicefont.subtitle Then enter your email address below to be notified when we launch!
   %br  
+  %p.nicefont.error
+    - if @preuser.errors
+      = @preuser.errors[:email][0]
+
   = form_for @preuser, :url => '/', :class => "signup" do |f|
     = f.text_field :email, :placeholder => "you@email.com"
     = f.submit raw("Sign me up!"), :class => "btn btn-primary btn-large"
