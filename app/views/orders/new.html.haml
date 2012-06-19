@@ -1,5 +1,5 @@
 .message blah
-= form_for @order do |f|
+= form_for @order, :url => order_confirm_path do |f|
   = f.label "Your Email"
   = f.text_field :sender_email, :placeholder => "you@example.com"
   = f.label "Your Name"

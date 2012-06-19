@@ -5,6 +5,10 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
   
+  def confirm
+    @order = Order.new(params[:order])
+  end
+
   def create
     @order = Order.new(params[:order])
     if @order.save

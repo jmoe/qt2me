@@ -1,0 +1,25 @@
+.message
+  Check it out!
+
+.order-details
+  = image_tag 'cute-kitten.jpg', :id => "postcard-image"
+  %p
+    You : #{@order.sender_name}
+  %p
+    Your Email : #{@order.sender_email}
+  %p
+    Your Friend : #{@order.recipient_name}
+  %p
+    Your Friend's Address : 
+  %p
+    = order_recipient_full_address @order
+
+= form_for @order do |f|
+  = f.hidden_field :sender_email
+  = f.hidden_field :sender_name
+  = f.hidden_field :recipient_name
+  = f.hidden_field :recipient_address
+  = f.hidden_field :recipient_city
+  = f.hidden_field :recipient_state
+  = f.hidden_field :recipient_postal
+  = f.submit "Looks good, send it!"

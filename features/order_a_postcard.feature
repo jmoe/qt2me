@@ -17,4 +17,11 @@ Feature: Order a postcard
       | order_recipient_state   | CA              |
       | order_recipient_postal  | 94110           |
     And I submit the form "Submit Order"
+    Then I should see the message "Check it out!"    
+    And I should see the message "You : Mary Smith"
+    And I should see the message "Your Email : foo@bar.com"
+    And I should see the message "Your Friend : Beth Chang"
+    And I should see the recipients full address
+    And I should see the postcard image
+    When I submit the form "Looks good, send it!"
     Then I should see the message "Thank you!"

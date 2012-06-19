@@ -41,7 +41,8 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
+  gem 'factory_girl_rails'
 end
 
-group :test, :development do
+group :test, :development do  
 end
