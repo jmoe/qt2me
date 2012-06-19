@@ -1,0 +1,15 @@
+.message blah
+= form_for @order do |f|
+  = f.label "Your Email"
+  = f.text_field :sender_email, :placeholder => "you@example.com"
+  = f.label "Your Name"
+  = f.text_field :sender_name
+  = f.label "Recipient's Name"
+  = f.text_field :recipient_name
+  = f.label "Recipient's Address"
+  = f.text_field :recipient_address, :placeholder => "address"
+  = f.text_field :recipient_city, :placeholder => "city"
+  = f.text_field :recipient_state, :placeholder => "state"
+  = f.text_field :recipient_postal, :placeholder => "zip code"
+  = f.submit "Submit Order"
+        

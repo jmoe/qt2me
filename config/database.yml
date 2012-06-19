@@ -29,3 +29,6 @@ development:
 test: &test
   <<: *local
   database: qt2me_test
+
+cucumber:
+  <<: *test

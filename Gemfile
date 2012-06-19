@@ -34,9 +34,14 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :test, :development do
-  gem 'rspec'
-  gem 'rspec-rails'
 end
