@@ -21,3 +21,4 @@ nohup.out
 .rspec
 dump.rdb
 temp-*.rdb
+.idea
