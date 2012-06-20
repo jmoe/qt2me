@@ -3,7 +3,7 @@ Given 'I visit the new order page' do
 end
 
 Then 'I should see the logo' do
-  page.should have_content('Qt2Me')
+  page.should have_selector("#logo")
 end
 
 And /I should see the message "(.*)"/ do |message|
