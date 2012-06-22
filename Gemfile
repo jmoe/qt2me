@@ -3,8 +3,9 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.4'
 gem 'haml-rails'
 gem 'pg'
-gem "validates_email_format_of"
-gem "dynamic_form"
+gem 'validates_email_format_of' 
+gem 'dynamic_form'
+gem 'stripe'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -34,15 +35,16 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
-  gem 'rspec'
-  gem 'rspec-rails'
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl_rails'
+  gem 'simplecov'
 end
 
 group :test, :development do  
+  gem 'rspec'
+  gem 'rspec-rails'
 end
