@@ -16,7 +16,7 @@ Feature: Order a postcard
       | order_recipient_city    | San Francisco    |
       | order_recipient_state   | CA               |
       | order_recipient_postal  | 94110            |
-      | credit_car              | 4242424242424242 |
+      | credit_card             | 4242424242424242 |
       | cvc                     | 123              |
       | expiration_month        | 11               |
       | expiration_year         | 2012             |
@@ -27,5 +27,5 @@ Feature: Order a postcard
     And I should see the message "Your Friend : Beth Chang"
     And I should see the recipients full address
     And I should see the postcard image
-    # When I submit the form "Looks good, send it!"
-    # Then I should see the message "Thank you!"
+    When I submit the form "Looks good, send it!"
+    Then I should see the message "Thank you!"

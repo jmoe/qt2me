@@ -8,7 +8,7 @@
   .form-errors.error-message
   = form_for @order, :url => order_confirm_path do |f|
     .sender
-      .sender_email-errors.error-message
+      .sender_email-errors.error-message.right-aligned
       = f.label "Your Email"
       = f.text_field :sender_email, :placeholder => "you@example.com"
       .sender_name-errors.error-message
@@ -30,7 +30,7 @@
     .payment
       .payment-errors.error-message
       = f.label "Credit Card"
-      %input#credit_car(type="text" size="20" autocomplete="off" class="card-number")
+      %input#credit_card(type="text" size="20" autocomplete="off" class="card-number")
       = f.label "CVC", :style => 'text-transform: uppercase'
       %input#cvc(type="text" size="4" autocomplete="off" class="card-cvc")
       = f.label "Expiration Month"
