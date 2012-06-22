@@ -3,17 +3,12 @@
 
 .order-details
   = image_tag 'cute-kitten.jpg', :id => "postcard-image"
-  %p
-    You : #{@order.sender_name}
-  %p
-    Your Email : #{@order.sender_email}
-  %p
-    Your Friend : #{@order.recipient_name}
-  %p
-    Your Friend's Address : 
-  %p
-    = order_recipient_full_address @order
-
+  %p You : #{@order.sender_name}
+  %p Your Email : #{@order.sender_email}
+  %p Your Friend : #{@order.recipient_name}
+  %p Your Friend's Address : 
+  %p #{order_recipient_full_address @order}
+  %p Paying with card ending in #{params[:last4]}
 = form_for @order do |f|
   = f.hidden_field :sender_email
   = f.hidden_field :sender_name
@@ -22,4 +17,7 @@
   = f.hidden_field :recipient_city
   = f.hidden_field :recipient_state
   = f.hidden_field :recipient_postal
+  = f.hidden_field :recipient_postal
+  = f.hidden_field :payment_token
   = f.submit "Looks good, send it!"
+  = link_to "Wait, let me change something", "javascript:window.location='#{new_order_path}?' + $('#new_order').serialize();"

@@ -1,5 +1,38 @@
+body {
+  font-family: 'Port Lligat Sans', sans-serif;
+  font-size: 16px;
+}
+
 #logo {
   width: 217px;
   height: 63px;
   background-image: url('/assets/logo.png');
+}
+
+.container { 
+  padding-top: 20px; 
+  width: 600px;
+  margin: 0 auto;
+}
+
+.field_with_errors{
+  display:inline;
+}
+
+input{
+  font-size: 1.25em; /* 20px / 16px */
+}
+
+input[type="submit"]{
+  font-family: 'Port Lligat Sans', sans-serif;
+}
+
+input[type="text"]{
+  font-family: 'Port Lligat Sans', sans-serif;
+  padding:8px 8px 12px 8px;
+  border: solid 2px #666;
+}
+
+.error-message {
+  color: red;
 }

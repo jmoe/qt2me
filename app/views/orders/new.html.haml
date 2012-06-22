@@ -1,15 +1,42 @@
+= content_for :head do
+  = javascript_include_tag 'https://js.stripe.com/v1/'
+  :javascript
+    Stripe.setPublishableKey('#{Stripe.publishable_key}');
+
 .message blah
-= form_for @order, :url => order_confirm_path do |f|
-  = f.label "Your Email"
-  = f.text_field :sender_email, :placeholder => "you@example.com"
-  = f.label "Your Name"
-  = f.text_field :sender_name
-  = f.label "Recipient's Name"
-  = f.text_field :recipient_name
-  = f.label "Recipient's Address"
-  = f.text_field :recipient_address, :placeholder => "address"
-  = f.text_field :recipient_city, :placeholder => "city"
-  = f.text_field :recipient_state, :placeholder => "state"
-  = f.text_field :recipient_postal, :placeholder => "zip code"
-  = f.submit "Submit Order"
+#order-form
+  .form-errors.error-message
+  = form_for @order, :url => order_confirm_path do |f|
+    .sender
+      .sender_email-errors.error-message
+      = f.label "Your Email"
+      = f.text_field :sender_email, :placeholder => "you@example.com"
+      .sender_name-errors.error-message
+      = f.label "Your Name"
+      = f.text_field :sender_name
+    .recipient
+      .recipient_name-errors.error-message
+      = f.label "Recipient's Name"
+      = f.text_field :recipient_name
+      = f.label "Recipient's Address"
+      .recipient_address-errors.error-message
+      = f.text_field :recipient_address, :placeholder => "address"
+      .recipient_city-errors.error-message
+      = f.text_field :recipient_city, :placeholder => "city"
+      .recipient_state-errors.error-message
+      = f.text_field :recipient_state, :size => 3, :placeholder => "state"
+      .recipient_postal-errors.error-message
+      = f.text_field :recipient_postal, :size => 10, :placeholder => "zip code"
+    .payment
+      .payment-errors.error-message
+      = f.label "Credit Card"
+      %input#credit_car(type="text" size="20" autocomplete="off" class="card-number")
+      = f.label "CVC", :style => 'text-transform: uppercase'
+      %input#cvc(type="text" size="4" autocomplete="off" class="card-cvc")
+      = f.label "Expiration Month"
+      %input#expiration_month(type="text" size="2" placeholder="MM" class="card-expiry-month")
+      = f.label "Expiration Year"
+      %input#expiration_year(type="text" size="4" placeholder="YYYY" class="card-expiry-year")
+    .submit
+      = f.submit "Next &raquo;".html_safe, :class => 'submit-button'
         
