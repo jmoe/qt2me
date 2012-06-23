@@ -51,7 +51,9 @@
 
         = f.text_field :recipient_postal, :size => 10, :placeholder => "zip code"
         .recipient_postal-errors.error-message
-    
+        %a(href="javascript:testOrderForm()" class="btn btn-warning")
+          Fill Form
+
     .submit
       = f.submit "Next &raquo;".html_safe, :class => 'btn btn-large btn-primary'
 
