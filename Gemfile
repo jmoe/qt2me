@@ -6,6 +6,7 @@ gem 'pg'
 gem 'validates_email_format_of' 
 gem 'dynamic_form'
 gem 'stripe'
+gem 'bourbon'
 
 # Gems used only for assets and not required
 # in production environments by default.

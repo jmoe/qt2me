@@ -32,6 +32,8 @@ GEM
     addressable (2.2.8)
     ansi (1.4.2)
     arel (2.2.3)
+    bourbon (2.1.0)
+      sass (>= 3.1)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -174,6 +176,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   capybara
   cucumber
   cucumber-rails

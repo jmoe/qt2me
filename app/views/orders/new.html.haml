@@ -3,40 +3,57 @@
   :javascript
     Stripe.setPublishableKey('#{Stripe.publishable_key}');
 
-.message blah
+= image_tag "qt_1.jpg", :class => "postcard"
 #order-form
-  .form-errors.error-message
+  
   = form_for @order, :url => order_confirm_path do |f|
-    .sender
-      .sender_email-errors.error-message.right-aligned
-      = f.label "Your Email"
-      = f.text_field :sender_email, :placeholder => "you@example.com"
-      .sender_name-errors.error-message
-      = f.label "Your Name"
-      = f.text_field :sender_name
-    .recipient
-      .recipient_name-errors.error-message
-      = f.label "Recipient's Name"
-      = f.text_field :recipient_name
-      = f.label "Recipient's Address"
-      .recipient_address-errors.error-message
-      = f.text_field :recipient_address, :placeholder => "address"
-      .recipient_city-errors.error-message
-      = f.text_field :recipient_city, :placeholder => "city"
-      .recipient_state-errors.error-message
-      = f.text_field :recipient_state, :size => 3, :placeholder => "state"
-      .recipient_postal-errors.error-message
-      = f.text_field :recipient_postal, :size => 10, :placeholder => "zip code"
-    .payment
-      .payment-errors.error-message
-      = f.label "Credit Card"
-      %input#credit_card(type="text" size="20" autocomplete="off" class="card-number")
-      = f.label "CVC", :style => 'text-transform: uppercase'
-      %input#cvc(type="text" size="4" autocomplete="off" class="card-cvc")
-      = f.label "Expiration Month"
-      %input#expiration_month(type="text" size="2" placeholder="MM" class="card-expiry-month")
-      = f.label "Expiration Year"
-      %input#expiration_year(type="text" size="4" placeholder="YYYY" class="card-expiry-year")
+    .message
+      Make someone's day! 
+    .submessage
+      Just fill this out and we'll send them a photo postcard of this cutie!
+    #form-left
+      %h2
+        You
+      .sender
+        = f.label "Email"
+        = f.text_field :sender_email, :placeholder => "you@example.com"
+        .sender_email-errors.error-message.right-aligned
+        = f.label "Name"
+        = f.text_field :sender_name
+        .sender_name-errors.error-message
+      %h2
+        Credit Card
+      .payment
+        = f.label "Number"
+        %input#credit_card(type="text" size="20" autocomplete="off" class="card-number")
+        .payment-errors.error-message
+        = f.label "CVC", :style => 'text-transform: uppercase'
+        %input#cvc(type="text" size="4" autocomplete="off" class="card-cvc")
+        = f.label "Exp. Month"
+        %input#expiration_month(type="text" size="2" placeholder="MM" class="card-expiry-month")
+        = f.label "Exp. Year"
+        %input#expiration_year(type="text" size="4" placeholder="YYYY" class="card-expiry-year")
+    #form-right
+      %h2
+        Them
+      .recipient
+        = f.label "Name"
+        = f.text_field :recipient_name
+        .recipient_name-errors.error-message
+        = f.label "Address"
+        = f.text_field :recipient_address, :placeholder => "address"
+        .recipient_address-errors.error-message
+        = f.text_field :recipient_city, :placeholder => "city"
+        .recipient_city-errors.error-message
+
+        = f.text_field :recipient_state, :size => 3, :placeholder => "state"
+        .recipient_state-errors.error-message
+
+        = f.text_field :recipient_postal, :size => 10, :placeholder => "zip code"
+        .recipient_postal-errors.error-message
+    
     .submit
-      = f.submit "Next &raquo;".html_safe, :class => 'submit-button'
+      = f.submit "Next &raquo;".html_safe, :class => 'btn btn-large btn-primary'
+
+    .clear
         

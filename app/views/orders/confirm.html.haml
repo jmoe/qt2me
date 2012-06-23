@@ -1,14 +1,8 @@
+= image_tag 'qt_1.jpg', :id => "postcard-image", :class => "postcard"
 .message
   Check it out!
-
-.order-details
-  = image_tag 'cute-kitten.jpg', :id => "postcard-image"
-  %p You : #{@order.sender_name}
-  %p Your Email : #{@order.sender_email}
-  %p Your Friend : #{@order.recipient_name}
-  %p Your Friend's Address : 
-  %p #{order_recipient_full_address @order}
-  %p Paying with card ending in #{params[:last4]}
+.submessage
+  If everything looks good we'll go ahead and make their day. 
 = form_for @order do |f|
   = f.hidden_field :sender_email
   = f.hidden_field :sender_name
@@ -19,5 +13,33 @@
   = f.hidden_field :recipient_postal
   = f.hidden_field :recipient_postal
   = f.hidden_field :payment_token
-  = f.submit "Looks good, send it!"
-  = link_to "Wait, let me change something", "javascript:window.location='#{new_order_path}?' + $('#new_order').serialize();"
+  .order-details
+    #form-left
+      %h2
+        You
+      %label
+        Email
+      %p
+        #{@order.sender_email}      
+      %label
+        Name
+      %p
+        #{@order.sender_name}      
+      %h2 
+        Credit Card
+      %p 
+        Ending in #{params[:last4]}
+    #form-right
+      %h2 Them
+      %label Name
+      %p #{@order.recipient_name}
+      %label Address
+      %p #{order_recipient_full_address @order}
+    
+  .clear
+
+  .buttons
+    = link_to "Wait, let me fix it.", "javascript:window.location='#{new_order_path}?' + $('#new_order').serialize();", :class => 'btn btn-large btn-danger'
+
+    = f.submit "Looks good, send it!", :class => 'btn btn-large btn-success'
+

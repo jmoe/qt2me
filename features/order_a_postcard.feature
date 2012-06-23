@@ -27,5 +27,5 @@ Feature: Order a postcard
     And I should see the message "Your Friend : Beth Chang"
     And I should see the recipients full address
     And I should see the postcard image
-    When I submit the form "Looks good, send it!"
-    Then I should see the message "Thank you!"
+    # When I submit the form "Looks good, send it!"
+    # Then I should see the message "Thank you!"

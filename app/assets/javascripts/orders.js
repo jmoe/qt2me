@@ -18,6 +18,20 @@
     }
   };
   
+  testOrderForm = function(){
+    $('.card-number').val('4242424242424242');
+    $('.card-cvc').val('321');
+    $('.card-expiry-month').val('08');
+    $('.card-expiry-year').val('2014');
+    $('#order_sender_email').val('me@jmoe.com');
+    $('#order_sender_name').val('Jereme Monteau');
+    $('#order_recipient_name').val('Tom Collier');
+    $('#order_recipient_address').val('153 Townsend');
+    $('#order_recipient_city').val('San Francisco');
+    $('#order_recipient_state').val('CA');
+    $('#order_recipient_postal').val('94107');
+  };
+
   $(document).ready(function() {
     $('#order-form').find("#new_order").submit(function(event) {
       // disable the submit button to prevent repeated clicks

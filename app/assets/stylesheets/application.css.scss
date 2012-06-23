@@ -1,10 +1,29 @@
-/** * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/) * http://cssreset.com * Copyright 2012 Yahoo! Inc. All rights reserved. * http://yuilibrary.com/license/ *//*	TODO will need to remove settings on HTML since we can't namespace it.	TODO with the prefix, should I group by selector or property for weight savings?*/html{	color:#000;	background:#FFF;}/*	TODO remove settings on BODY since we can't namespace it.*//*	TODO test putting a class on HEAD.		- Fails on FF. */body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {	margin:0;	padding:0;}table {	border-collapse:collapse;	border-spacing:0;}fieldset,img {	border:0;}/*	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...*/address,caption,cite,code,dfn,em,strong,th,var {	font-style:normal;	font-weight:normal;} ol,ul {	list-style:none;} caption,th {	text-align:left;}h1,h2,h3,h4,h5,h6 {	font-size:100%;	font-weight:normal;}q:before,q:after {	content:'';}abbr,acronym {	border:0;	font-variant:normal;}/* to preserve line-height and selector appearance */sup {	vertical-align:text-top;}sub {	vertical-align:text-bottom;}input,textarea,select {	font-family:inherit;	font-size:inherit;	font-weight:inherit;}/*to enable resizing for IE*/input,textarea,select {	*font-size:100%;}/*because legend doesn't inherit in IE */legend {	color:#000;}/* YUI CSS Detection Stamp */#yui3-css-stamp.cssreset { display: none; }
+@import "bourbon";
+@import "bootstrap";
+
+$qt_pink : #E86DB2;
+$qt_blue : #3f6b9a;
 
 body {
   font-family: 'Port Lligat Sans', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  background-image: url('/assets/lightpaperfibers.png');
+  margin:0px;
+  padding:0px;
 }
 
+
+h1, h2, h3, h4{
+  color:#2b4a6c;
+}
+
+a:link, a:visited{
+  text-decoration:none;
+}
+
+.btn-large{
+  font-size:1.6em;
+}
 #logo {
   width: 217px;
   height: 63px;
@@ -22,28 +41,99 @@ body {
 }
 
 label {
+  font-size:1.2em;
   clear: both;
-  display: inline-block;
+  display: block;
+  margin-top:6px;
+  color:#222;
 }
 
+.postcard{
+  border:3px solid #E86DB2;
+  @include border-radius(4px);
+  @include box-shadow(4px 4px 6px #aaa);  
+  margin-top:6px;
+  margin-bottom:6px;
+  @include transform(rotate(-4deg));
+}
+
+.clear{
+  clear:both;
+}
+#form-left{
+  float:left;
+  text-align:left;
+  margin-right:40px;
+}
+#form-right{
+  text-align:left;
+  float:left;
+}
+.message{
+  text-align:right;
+  font-size:2.6em;
+  margin: 6px 0px 10px 0px;
+  color:#2b4a6c;
+}
+
+.submessage{
+  text-align:right;
+  color:#555  ;
+  font-size:1.4em;  
+}
 input{
-  font-size: 1.25em; /* 20px / 16px */
+  font-size: 1.3em; /* 20px / 16px */
 }
 
 input[type="submit"]{
-  font-family: 'Port Lligat Sans', sans-serif;
+  font-family: 'Port Lligat Sans', sans-serif; 
 }
 
 input[type="text"]{
   font-family: 'Port Lligat Sans', sans-serif;
-  padding:8px 8px 12px 8px;
-  border: solid 2px #666;
+  padding:4px 4px 6px 4px;
+  border: solid 2px $qt_pink;
+  @include border-radius(6px);
 }
 
+.submit{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+}
+#order-form{
+  position:relative; 
+  clear:both;
+  float:right;
+}
+
+.order-details{  
+  margin-top:30px;
+  margin-left:20px;
+  color:#555;
+  font-size:1.1em;
+  @include clearfix;
+
+}
+.footer{
+  border-top:solid 1px #E86DB2;
+  @include box-shadow(0px -2px 8px #ccc);  
+  clear:both;
+  margin-top:60px;
+  padding-top:20px;
+  padding-bottom:60px;
+  text-align:center;
+  background:white;
+}
+
+.buttons{  
+  margin-top:30px;
+  margin-left:20px;
+}
 .error-message {
   color: red;
-  
-  &.right-aligned {
-    margin-left: 110px;
-  }
+  text-transform:capitalize;
+  margin-left:6px;
+  margin-top:2px;
+  margin-bottom:8px;  
 }
