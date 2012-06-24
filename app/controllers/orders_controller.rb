@@ -5,6 +5,9 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
   end
   
+  def coming_soon
+  end
+
   def validate
     @order = Order.new(params[:order])
     if @order.valid?

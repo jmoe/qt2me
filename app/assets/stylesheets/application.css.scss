@@ -201,7 +201,7 @@ iframe{
 }
 .footer{
   background-color:lighten($qt_pink,30%);
-  border-top:solid 1px #E86DB2;
+  border-top:solid 2px $qt_pink;
   @include box-shadow(0px -2px 8px #ccc);  
   clear:both;
   margin-top:60px;
