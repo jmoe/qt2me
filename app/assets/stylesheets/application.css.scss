@@ -100,7 +100,6 @@ label {
   @include box-shadow(4px 4px 6px #aaa);  
 }
 
-
 .flag{  
   font-size:1.2em;
   position:absolute;
@@ -115,7 +114,7 @@ label {
     height:0px; 
     border-bottom:0px solid transparent;  /* left arrow slant */
     border-top:10px solid transparent; /* right arrow slant */
-    border-right:10px solid $qt_blue; /* bottom, add background color here */
+    border-right:10px solid darken($qt_blue,10%); /* bottom, add background color here */
 
   }
   .body{
@@ -123,8 +122,12 @@ label {
     @include box-shadow(2px 2px 4px #555);  
     padding:10px 20px;
     float:left;
-    background-color:lighten($qt_blue,10%);
+    background-color:$qt_blue;
     @include border-radius(0px 6px 6px 0px);
+  }
+
+  .body.flag-hover{
+    background-color:lighten($qt_blue,20%);
   }
 }
 

@@ -33,6 +33,8 @@
   };
 
   $(document).ready(function() {
+
+    $(".preview").hover(function(){$('.flag .body').toggleClass('flag-hover')});
     $('#order-form').find("#new_order").submit(function(event) {
       // disable the submit button to prevent repeated clicks
       $('.submit-button').attr("disabled", "disabled");
