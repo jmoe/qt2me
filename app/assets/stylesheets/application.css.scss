@@ -194,6 +194,11 @@ input[type="text"]{
   @include clearfix;
 
 }
+
+iframe{
+  border: solid 1px lighten($qt_pink,10%);
+  @include border-radius(2px);
+}
 .footer{
   background-color:lighten($qt_pink,30%);
   border-top:solid 1px #E86DB2;
