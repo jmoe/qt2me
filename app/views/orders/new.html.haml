@@ -3,14 +3,24 @@
   :javascript
     Stripe.setPublishableKey('#{Stripe.publishable_key}');
 
-= image_tag "qt_1.jpg", :class => "postcard"
+.preview
+  = image_tag "qt_1.jpg", :class => "postcard"
+  .flag
+    .fold
+    .body><
+      New QT Every Week!
+    .arrow-right><
+
 #order-form
   
   = form_for @order, :url => order_confirm_path do |f|
     .message
       Make someone's day! 
+    .message2
+      Only $3 and guaranteed to bring a smile.
+    %br
     .submessage
-      Just fill this out and we'll send them a photo postcard of this cutie!
+      Just fill this out and we'll send them a photo postcard of this cutie.
     #form-left
       %h2
         You

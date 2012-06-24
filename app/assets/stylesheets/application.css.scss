@@ -4,6 +4,45 @@
 $qt_pink : #E86DB2;
 $qt_blue : #3f6b9a;
 
+$horizontal_offset: 2px;
+$vertical_offset: 2px;
+$blur_radius: 2px;
+$shadow_color: rgba( 10, 10, 10, .45);
+@mixin text-shadow($h: $horizontal_offset, $v: $vertical_offset, $c: $shadow_color, $b: $blur_radius) {
+  $value: $h $v $b $c;
+  -moz-text-shadow: $value;
+  -webkit-text-shadow: $value;
+  -o-text-shadow: $value;
+  text-shadow: $value;
+}
+
+@mixin css-arrow($orientation: "top", $bg-color: #fff, $arrow-color: #ccc, $size: 10px) {  
+
+  font-size: 0px; 
+  line-height: 0%; 
+  width: 0px;
+  
+  @if $orientation == "top" {
+    border-top: $size solid $arrow-color;
+    border-left: ($size / 2) solid $bg-color;
+    border-right: ($size / 2) solid $bg-color; }
+  
+  @if $orientation == "bottom" {
+    border-bottom: $size solid $arrow-color;
+    border-left: ($size / 2) solid $bg-color;
+    border-right: ($size / 2) solid $bg-color; }
+  
+  @if $orientation == "left" {
+    border-left: $size solid $arrow-color;
+    border-top: ($size / 2) solid $bg-color;
+    border-bottom: ($size / 2) solid $bg-color; }
+  
+  @if $orientation == "right" {
+    border-right: $size solid $arrow-color;
+    border-top: ($size / 2) solid $bg-color;
+    border-bottom: ($size / 2) solid $bg-color; } 
+}
+
 body {
   font-family: 'Port Lligat Sans', sans-serif;
   font-size: 14px;
@@ -15,6 +54,7 @@ body {
 
 h1, h2, h3, h4{
   color:#2b4a6c;
+  @include text-shadow(0px, -1px, #666, 0px);
 }
 
 a:link, a:visited{
@@ -48,13 +88,43 @@ label {
   color:#222;
 }
 
+.preview{
+  position:relative;  
+  @include transform(rotate(-4deg));
+}
 .postcard{
+  position:relative;
   border:3px solid #E86DB2;
   @include border-radius(4px);
   @include box-shadow(4px 4px 6px #aaa);  
-  margin-top:6px;
-  margin-bottom:6px;
-  @include transform(rotate(-4deg));
+}
+
+.flag{  
+  font-size:1.2em;
+  position:absolute;
+  left:-10px;
+  bottom:20px;  
+  color:white;  
+  .fold{
+    position:absolute;
+    left:0px;
+    top:-10px;
+    width:0px; 
+    height:0px; 
+    border-bottom:0px solid transparent;  /* left arrow slant */
+    border-top:10px solid transparent; /* right arrow slant */
+    border-right:10px solid $qt_blue; /* bottom, add background color here */
+
+  }
+  .body{
+    @include text-shadow(0px, -1px, #333, 1px);
+    @include box-shadow(2px 2px 4px #555);  
+    padding:10px 20px;
+    float:left;
+    background-color:lighten($qt_blue,10%);
+    @include border-radius(0px 6px 6px 0px);
+  }
+
 }
 
 .clear{
@@ -70,10 +140,19 @@ label {
   float:left;
 }
 .message{
+  @include text-shadow(0px, -1px, #333, 1px);
   text-align:right;
   font-size:2.6em;
   margin: 6px 0px 10px 0px;
   color:#2b4a6c;
+}
+
+.message2{
+  @include text-shadow(0px, -1px, #333, 1px);
+  text-align:right;
+  font-size:1.8em;
+  margin: 6px 0px 10px 0px;
+  color:lighten(#2b4a6c,10%);
 }
 
 .submessage{
