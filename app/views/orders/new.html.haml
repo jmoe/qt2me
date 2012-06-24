@@ -3,13 +3,14 @@
   :javascript
     Stripe.setPublishableKey('#{Stripe.publishable_key}');
 
-.preview
-  = image_tag "qt_1.jpg", :class => "postcard"
-  .flag
-    .fold
-    .body><
-      Send me now for $3
-    .arrow-right><
+%a(href="#order-form")
+  .preview
+    = image_tag "qt_1.jpg", :class => "postcard"
+    .flag
+      .fold
+      .body><
+        Send me now for $3
+      .arrow-right><
 
 #order-form
   

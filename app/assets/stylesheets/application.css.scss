@@ -92,12 +92,14 @@ label {
   position:relative;  
   @include transform(rotate(-4deg));
 }
+
 .postcard{
   position:relative;
   border:3px solid #E86DB2;
   @include border-radius(4px);
   @include box-shadow(4px 4px 6px #aaa);  
 }
+
 
 .flag{  
   font-size:1.2em;
@@ -124,7 +126,6 @@ label {
     background-color:lighten($qt_blue,10%);
     @include border-radius(0px 6px 6px 0px);
   }
-
 }
 
 .clear{
