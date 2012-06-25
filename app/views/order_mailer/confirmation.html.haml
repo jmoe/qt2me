@@ -1,0 +1,9 @@
+= image_tag 'logo.png'
+%p Hi #{@order.sender_name.split.first},
+%p Thanks for ordering a cute postcard from Qt2.me!
+= image_tag 'qt_1.jpg', :id => "postcard-image", :class => "postcard"
+%p Your oder will be shipped in 7 - 10 business days to #{@order.recipient_name}
+%p #{@order.recipient_address}
+%br #{@order.recipient_city}, #{@order.recipient_state} #{@order.recipient_postal}
+%p Thanks,
+%br The Qt2.me Team

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Order do
   
-  context "#process_payment (before_create)" do
+  describe "#process_payment (before_create)" do
     
     let(:payment_token) { 'abc123' }
     let(:sender_email) { 'joe@example.com' }
@@ -27,6 +27,14 @@ describe Order do
       order.reload
       order.amount_charged.should == Order::POSTCARD_PRICE
     end
+    
+  end
+  
+  describe "#recipient_full_address" do
+    
+    let(:order) { FactoryGirl.build(:order) }
+
+    it { order.recipient_full_address.should == "#{order.recipient_address}, #{order.recipient_city}, #{order.recipient_state} #{order.recipient_postal}" }
     
   end
   
