@@ -29,7 +29,7 @@
       %h2 
         Credit Card
       %p 
-        Ending in #{params[:last4]} will be charged $3
+        Ending in #{params[:last4]} will be charged #{format_price(Order::POSTCARD_PRICE)}
     #form-right
       %h2 Them
       %label Name

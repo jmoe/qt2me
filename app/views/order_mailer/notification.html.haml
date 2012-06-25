@@ -1,3 +1,6 @@
+- unless Rails.env.production?
+  %p
+    %b [#{Rails.env}]
 %p Oh yeah! We just sold a postcard to #{@order.sender_name} <#{@order.sender_email}> for $#{"%.2f" % (@order.amount_charged / 100)}!
 %h3 Recipient Details:
 %p Name: #{@order.recipient_name}

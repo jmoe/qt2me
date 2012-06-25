@@ -8,9 +8,9 @@
     = image_tag "qt_1.jpg", :class => "postcard"
     .flag
       .fold
-      .body><
-        Send me now for $3
-      .arrow-right><
+      .body
+        Send me now for #{format_price(Order::POSTCARD_PRICE)}
+      .arrow-right
 
 #order-form
   
@@ -18,7 +18,7 @@
     .message
       Make someone's day! 
     .message2
-      Only $3 and guaranteed to bring a smile.
+      Only #{format_price(Order::POSTCARD_PRICE)} and guaranteed to bring a smile.
     %br
     .submessage
       Just fill this out and we'll send them a photo postcard of this QT.
@@ -62,8 +62,9 @@
 
         = f.text_field :recipient_postal, :size => 10, :placeholder => "zip code"
         .recipient_postal-errors.error-message
-        %a(href="javascript:testOrderForm()" class="btn btn-warning")
-          Fill Form
+        - unless Rails.env.production?
+          %a(href="javascript:testOrderForm()" class="btn btn-warning")
+            Fill Form
 
     .submit
       = f.submit "Next &raquo;".html_safe, :class => 'btn btn-large btn-primary'
