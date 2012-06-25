@@ -7,7 +7,7 @@ Qt2me::Application.configure do
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.action_mailer.asset_host = "http://www.qt2.me"
+  config.action_mailer.asset_host = "http://staging.qt2.me"
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false

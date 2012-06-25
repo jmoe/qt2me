@@ -1,7 +1,7 @@
 class OrderMailer < ActionMailer::Base
   include OrdersHelper
   
-  default from: 'tom@qt2.me'
+  default from: 'Tom Collier <tom@qt2.me>'
   
   def confirmation(order)
     @order = order
