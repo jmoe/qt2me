@@ -1,5 +1,7 @@
 @import "bourbon", "bootstrap", "variables", "mixins";
 
+//= require_tree .
+
 body {
   font-family: 'Port Lligat Sans', sans-serif;
   font-size: 14px;

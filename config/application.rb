@@ -46,8 +46,6 @@ module Qt2me
     config.assets.version = '1.0'
     
     config.action_mailer.delivery_method = :smtp
-
-    config.assets.precompile += ['orders.css']
   end
 end
 
