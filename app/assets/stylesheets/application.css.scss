@@ -3,7 +3,7 @@
 body {
   font-family: 'Port Lligat Sans', sans-serif;
   font-size: 14px;
-  background-image: url('/assets/lightpaperfibers.png');
+  background-image: url(/assets/lightpaperfibers.jpg);
   margin:0px;
   padding:0px;
 }
@@ -24,7 +24,7 @@ a:link, a:visited{
 #logo {
   width: 217px;
   height: 63px;
-  background-image: url('/assets/logo.png');
+  background-image: url(/assets/logo.png);
 }
 
 .container { 

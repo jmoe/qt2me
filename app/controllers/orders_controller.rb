@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
 
   def new
-    puts flash[:notice]
     @order = Order.new(params[:order])
   end
   

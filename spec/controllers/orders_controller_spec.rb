@@ -6,6 +6,13 @@ describe OrdersController do
   let!(:paid_order){FactoryGirl.build(:paid_order)}
 
 
+  describe "#new" do
+    it "loads" do
+      get :new
+      save_and_open_page
+    end
+  end
+
   describe "#validate" do
     
     it "responds with true if order is valid" do
