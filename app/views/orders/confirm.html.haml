@@ -36,6 +36,8 @@
         %label Address
         %p #{order_recipient_full_address @order}
     
+      .preview
+        = image_tag 'qt_1.jpg', :id => "postcard-image", :class => "postcard"
     .clear
 
     .buttons
@@ -43,5 +45,3 @@
 
       = f.submit "Looks good, send it!", :class => 'btn btn-large btn-success'
 
-  .preview
-    = image_tag 'qt_1.jpg', :id => "postcard-image", :class => "postcard"
