@@ -35,15 +35,15 @@
       %h2
         Credit Card
       .payment
+        .payment-errors.error-message
         = f.label "Number"
         %input#credit_card(type="text" size="20" autocomplete="off" class="card-number")
-        .payment-errors.error-message
-        = f.label "CVC", :style => 'text-transform: uppercase'
-        %input#cvc(type="text" size="4" autocomplete="off" class="card-cvc")
         = f.label "Exp. Month"
         %input#expiration_month(type="text" size="2" placeholder="MM" class="card-expiry-month")
         = f.label "Exp. Year"
         %input#expiration_year(type="text" size="4" placeholder="YYYY" class="card-expiry-year")
+        = f.label "CVC", :style => 'text-transform: uppercase'
+        %input#cvc(type="text" size="4" autocomplete="off" class="card-cvc")
     #form-right
       %h2
         Them
