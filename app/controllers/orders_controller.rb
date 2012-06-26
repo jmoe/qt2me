@@ -21,7 +21,9 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     if @order.save
-      flash[:notice] = "Thank you! Please allow 7 - 10 days for your postcard to arrive."
+      puts "order saved"
+      track_page_view("Order Complete","/orders/complete")
+      flash[:notice] = "Way to go! Please allow 7 - 10 days for your postcard to arrive."
       redirect_to action: :new
     else
       render template: 'orders/new'

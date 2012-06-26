@@ -1,6 +1,9 @@
 Qt2me::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  GA_TRACKER_ID ="UA-32475182-1"
+  GA_TRACKER_DOMAIN = "qt2.me"
+  
   config.force_ssl = true
   
   # Code is not reloaded between requests

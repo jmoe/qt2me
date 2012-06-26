@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe OrdersController do
   
+  let(:order){FactoryGirl.build(:order)}
+  let!(:paid_order){FactoryGirl.build(:paid_order)}
+
+
   describe "#validate" do
     
     it "responds with true if order is valid" do
@@ -20,4 +24,13 @@ describe OrdersController do
 
   end
   
+  describe "#create" do
+    it "creates an order complete page view" do
+      paid_order.sender_name
+      @controller.should_receive(:track_page_view).with("Order Complete","/orders/complete")
+      post :create, order: paid_order.attributes
+      paid_order.errors.should be_empty      
+    end
+  end
+
 end

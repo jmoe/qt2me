@@ -46,11 +46,13 @@ label {
 }
 
 .notice {
-  padding: 6px 12px;
-  border: 1px solid #2B4A6C;
+  padding: 10px 20px;
+  border: 2px solid $qt_pink;
   font-size: 1.25em;
-  margin: 12px auto 28px;
+  margin: 12px auto 38px;
   @include border-radius(6px 6px 6px 6px);
+  background-color:lighten($qt_pink,30%);  
+  @include box-shadow(4px 4px 6px #aaa);  
 }
 
 .postcard{
