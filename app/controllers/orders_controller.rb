@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
   
   def confirm
     @order = Order.new(params[:order])
+    track_page_view("Order Confirm","/orders/confirm")
   end
 
   def create
