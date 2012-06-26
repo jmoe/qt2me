@@ -24,14 +24,6 @@ describe OrdersController do
 
   end
   
-  describe "#confirm" do
-    it "creates an order confirm page view" do      
-      @controller.should_receive(:track_page_view).with("Order Confirm","/orders/confirm")
-      post :confirm, order: order.attributes
-      order.errors.should be_empty      
-    end
-  end
-
   describe "#create" do
     it "creates an order complete page view" do
       paid_order.sender_name
