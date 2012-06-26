@@ -27,7 +27,7 @@
   });
   
   $('#google-plus-share').live('click', function() {
-    window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.title) + '&hl=en-US');
+    window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.location.href) + '&hl=en-US');
   });
   
 })(this, this.document);
