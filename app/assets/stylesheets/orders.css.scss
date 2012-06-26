@@ -1,4 +1,22 @@
+@import "bourbon", "bootstrap", "variables", "mixins";
+
 .message {
+}
+
+.preview {
+  position:relative;  
+  @include transform(rotate(-4deg));
+}
+
+#form-left{
+  float:left;
+  text-align:left;
+  margin-right:20px;
+}
+
+#form-right{
+  text-align:left;
+  float:left;
 }
 
 #order-form {
@@ -18,3 +36,23 @@
     
   }
 }
+
+#order-confirmation {
+  form {
+    float: left;
+    display: inline-block;
+    width: 400px;
+  }
+  
+  .preview{
+    float: left;
+    display: inline-block;
+    width: 100px;
+    margin-top: 50px;
+
+    img {
+      width: 200px;
+    }
+  }
+}
+

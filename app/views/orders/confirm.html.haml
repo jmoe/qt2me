@@ -1,46 +1,50 @@
-.preview
-  = image_tag 'qt_1.jpg', :id => "postcard-image", :class => "postcard"
-.message
-  Check it out!
-.submessage
-  If everything looks good we'll go ahead and make their day. 
-= form_for @order do |f|
-  = f.hidden_field :sender_email
-  = f.hidden_field :sender_name
-  = f.hidden_field :recipient_name
-  = f.hidden_field :recipient_address
-  = f.hidden_field :recipient_city
-  = f.hidden_field :recipient_state
-  = f.hidden_field :recipient_postal
-  = f.hidden_field :recipient_postal
-  = f.hidden_field :payment_token
-  .order-details
-    #form-left
-      %h2
-        You
-      %label
-        Email
-      %p
-        #{@order.sender_email}      
-      %label
-        Name
-      %p
-        #{@order.sender_name}      
-      %h2 
-        Credit Card
-      %p 
-        Ending in #{params[:last4]} will be charged #{format_price(Order::POSTCARD_PRICE)}
-    #form-right
-      %h2 Them
-      %label Name
-      %p #{@order.recipient_name}
-      %label Address
-      %p #{order_recipient_full_address @order}
+- content_for :head do
+  = stylesheet_link_tag 'orders'
+  
+#order-confirmation
+  .message
+    Check it out!
+  .submessage
+    If everything looks good we'll go ahead and make their day. 
+  = form_for @order do |f|
+    = f.hidden_field :sender_email
+    = f.hidden_field :sender_name
+    = f.hidden_field :recipient_name
+    = f.hidden_field :recipient_address
+    = f.hidden_field :recipient_city
+    = f.hidden_field :recipient_state
+    = f.hidden_field :recipient_postal
+    = f.hidden_field :recipient_postal
+    = f.hidden_field :payment_token
+    .order-details
+      #form-left
+        %h2
+          You
+        %label
+          Email
+        %p
+          #{@order.sender_email}      
+        %label
+          Name
+        %p
+          #{@order.sender_name}      
+        %h2 
+          Credit Card
+        %p 
+          Ending in #{params[:last4]} will be charged #{format_price(Order::POSTCARD_PRICE)}
+      #form-right
+        %h2 Them
+        %label Name
+        %p #{@order.recipient_name}
+        %label Address
+        %p #{order_recipient_full_address @order}
     
-  .clear
+    .clear
 
-  .buttons
-    = link_to "Wait, let me fix it.", "javascript:window.location='#{new_order_path}?' + $('#new_order').serialize();", :class => 'btn btn-large btn-danger'
+    .buttons
+      = link_to "Wait, let me fix it.", "javascript:window.location='#{new_order_path}?' + $('#new_order').serialize();", :class => 'btn btn-large btn-danger'
 
-    = f.submit "Looks good, send it!", :class => 'btn btn-large btn-success'
+      = f.submit "Looks good, send it!", :class => 'btn btn-large btn-success'
 
+  .preview
+    = image_tag 'qt_1.jpg', :id => "postcard-image", :class => "postcard"
