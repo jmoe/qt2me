@@ -176,3 +176,38 @@ iframe{
   margin-top:2px;
   margin-bottom:8px;  
 }
+
+.share-container {
+  margin: 0 auto 20px;
+  width: 152px;
+  height: 32px;
+  
+  .share-button {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    float: left;
+    margin-left: 8px;
+    cursor: pointer;
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  #pintrest-share {
+    background-image: url(/assets/pinterest_32x32.png);
+  }
+
+  #facebook-share {
+    background-image: url(/assets/facebook_32x32.png);
+  }
+
+  #twitter-share {
+    background-image: url(/assets/twitter_32x32.png);
+  }
+
+  #google-plus-share {
+    background-image: url(/assets/google_plus_32x32.png);
+  }
+}
