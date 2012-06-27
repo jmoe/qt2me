@@ -21,12 +21,12 @@
   $('#facebook-share').live('click', function() {
     var url = "https://www.facebook.com/dialog/feed?" +
               "app_id=379298132126259&" +              
-              "link=" + "https://qt2.me&" +
-              "picture=" + "http://qt2.me/assets/qt_1.jpg&" +
+              "link=" + "https://www.qt2.me&" +
+              "picture=" + "http://www.qt2.me/assets/qt_1.jpg&" +
               "name=qt2me&" + 
               "caption=" + encodeURIComponent("Make someone's day!") + 
               "&description=" + encodeURIComponent("Send them a photo postcard of this QT!") +
-              "&redirect_uri=https://qt2.me";
+              "&redirect_uri=https://www.qt2.me";
     window.open(url);
   });
   
