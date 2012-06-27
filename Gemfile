@@ -8,6 +8,7 @@ gem 'dynamic_form'
 gem 'stripe'
 gem 'bourbon'
 gem 'gabba'
+gem 'newrelic_rpm'
 
 # Gems used only for assets and not required
 # in production environments by default.
