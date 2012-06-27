@@ -5,7 +5,7 @@ class OrderMailer < ActionMailer::Base
   
   def confirmation(order)
     @order = order
-    mail(to: order.sender_email, subject: 'Thank you for ordering a Qt2.me postcard')
+    mail(to: order.sender_email, subject: 'Thank you for ordering a qt2.me postcard')
   end
   
   def notification(order)
