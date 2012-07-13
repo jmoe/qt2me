@@ -241,3 +241,20 @@ iframe{
   }
 }
 
+.campaign-message {
+  margin: 20px 0 40px;
+  padding: 8px;
+  @include border-radius(4px);
+  border: 2px solid $qt_pink;
+  background-color: #f6e6ed;
+  
+  .question {
+    font-size: 1.4em;
+  }
+  
+  .call-to-action {
+    margin-top: 12px;
+    line-height: 130%;
+    font-size: 1.25em;
+  }
+}

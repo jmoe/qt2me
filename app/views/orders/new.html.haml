@@ -3,6 +3,17 @@
   :javascript
     Stripe.setPublishableKey('#{Stripe.publishable_key}');
 
+- if @campaign
+  .campaign-message
+    .question
+      Did this postcard make you smile?
+    .call-to-action
+      If so, share your happiness on
+      %a.facebook-share-link(href="#") Facebook
+      or
+      %a.twitter-share-link(href="#") Twitter.
+      Better yet, brighten the day of someone special by 
+      %a(href="#order-form") sending them a postcard! 
 %a(href="#order-form")
   .preview
     = image_tag "qt_1.jpg", :class => "postcard", :alt => "Hi!"

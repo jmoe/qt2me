@@ -7,10 +7,23 @@ describe OrdersController do
 
 
   describe "#new" do
+    
     it "loads" do
       get :new
-      save_and_open_page
+      response.should be_success
     end
+    
+    it "sets the campaign assign if utm_campaign paramter is set" do
+      campaign = 'test'
+      get :new, utm_campaign: campaign
+      assigns(:campaign).should == campaign
+    end
+    
+    it "does not set the campaign assign if utm_campaign paramter is not set" do
+      get :new
+      assigns(:campaign).should be_nil
+    end
+      
   end
 
   describe "#validate" do

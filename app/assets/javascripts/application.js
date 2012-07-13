@@ -18,7 +18,7 @@
     document.body.appendChild(e);
   });
   
-  $('#facebook-share').live('click', function() {
+  $('#facebook-share, .facebook-share-link').live('click', function() {
     var url = "https://www.facebook.com/dialog/feed?" +
               "app_id=379298132126259&" +              
               "link=" + "https://www.qt2.me&" +
@@ -30,7 +30,7 @@
     window.open(url);
   });
   
-  $('#twitter-share').live('click', function() {
+  $('#twitter-share, .twitter-share-link').live('click', function() {
     window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + '&url=' + encodeURIComponent(document.location.href) + '&via=qt2me');
   });
   

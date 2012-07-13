@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new(params[:order])
+    @campaign = params[:utm_campaign]
   end
   
   def validate
