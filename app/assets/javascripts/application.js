@@ -16,6 +16,7 @@
     e.setAttribute('charset','UTF-8');
     e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);
     document.body.appendChild(e);
+    return false;
   });
   
   $('#facebook-share, .facebook-share-link').live('click', function() {
@@ -28,14 +29,17 @@
               "&description=" + encodeURIComponent("Send them a photo postcard of this QT!") +
               "&redirect_uri=https://www.qt2.me";
     window.open(url);
+    return false;
   });
   
   $('#twitter-share, .twitter-share-link').live('click', function() {
     window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + '&url=' + encodeURIComponent(document.location.href) + '&via=qt2me');
+    return false;
   });
   
   $('#google-plus-share').live('click', function() {
     window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.location.href) + '&hl=en-US');
+    return false;
   });
   
 })(this, this.document);
