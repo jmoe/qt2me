@@ -2,7 +2,7 @@
 %p Hi #{@order.sender_name.split.first},
 %p Thanks for ordering a cute postcard from qt2me!
 = image_tag 'qt_1.jpg', :id => "postcard-image", :class => "postcard", :width => "300"
-%p Your oder will be shipped in 7 - 10 business days to
+%p Your order will be shipped in 7 - 10 business days to
 %p(style="margin-left:24px")
   = @order.recipient_name
   %br #{@order.recipient_address}
