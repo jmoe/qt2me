@@ -12,73 +12,73 @@
       %a.facebook-share-link(href="#") Facebook
       or
       %a.twitter-share-link(href="#") Twitter.
-      Better yet, brighten the day of someone special by 
-      %a(href="#order-form") sending them a postcard! 
+      Better yet, brighten the day of someone special by
+      %a(href="#order-form") sending them a postcard!
 %a(href="#order-form")
   .preview
     = image_tag "qt_1.jpg", :class => "postcard", :alt => "Hi!"
-    .flag
-      .fold
-      .body
-        Send me now for #{format_price(Order::POSTCARD_PRICE)}
-      .arrow-right
+    / .flag
+    /   .fold
+    /   .body
+    /     Send me now for #{format_price(Order::POSTCARD_PRICE)}
+    /   .arrow-right
 
-#order-form
-  
-  = form_for @order, :url => order_confirm_path do |f|
-    .message
-      Make someone's day! 
-    .message2
-      Only #{format_price(Order::POSTCARD_PRICE)} and guaranteed to bring a smile.
-    %br
-    .submessage
-      Just fill this out and we'll send them a photo postcard of this QT.
-    #form-left
-      %h2
-        You
-      .sender
-        = f.label "Email"
-        = f.text_field :sender_email, :placeholder => "you@example.com"
-        .sender_email-errors.error-message.right-aligned
-        = f.label "Name"
-        = f.text_field :sender_name
-        .sender_name-errors.error-message
-      %h2
-        Credit Card
-      .payment
-        .payment-errors.error-message
-        = f.label "Number"
-        %input#credit_card(type="text" size="20" autocomplete="off" class="card-number")
-        = f.label "Exp. Month"
-        %input#expiration_month(type="text" size="2" placeholder="MM" class="card-expiry-month")
-        = f.label "Exp. Year"
-        %input#expiration_year(type="text" size="4" placeholder="YYYY" class="card-expiry-year")
-        = f.label "CVC", :style => 'text-transform: uppercase'
-        %input#cvc(type="text" size="4" autocomplete="off" class="card-cvc")
-    #form-right
-      %h2
-        Them
-      .recipient
-        = f.label "Name"
-        = f.text_field :recipient_name
-        .recipient_name-errors.error-message
-        = f.label "Address"
-        = f.text_field :recipient_address, :placeholder => "address"
-        .recipient_address-errors.error-message
-        = f.text_field :recipient_city, :placeholder => "city"
-        .recipient_city-errors.error-message
+/ #order-form
 
-        = f.text_field :recipient_state, :size => 3, :placeholder => "state"
-        .recipient_state-errors.error-message
+/   = form_for @order, :url => order_confirm_path do |f|
+/     .message
+/       Make someone's day!
+/     .message2
+/       Only #{format_price(Order::POSTCARD_PRICE)} and guaranteed to bring a smile.
+/     %br
+/     .submessage
+/       Just fill this out and we'll send them a photo postcard of this QT.
+/     #form-left
+/       %h2
+/         You
+/       .sender
+/         = f.label "Email"
+/         = f.text_field :sender_email, :placeholder => "you@example.com"
+/         .sender_email-errors.error-message.right-aligned
+/         = f.label "Name"
+/         = f.text_field :sender_name
+/         .sender_name-errors.error-message
+/       %h2
+/         Credit Card
+/       .payment
+/         .payment-errors.error-message
+/         = f.label "Number"
+/         %input#credit_card(type="text" size="20" autocomplete="off" class="card-number")
+/         = f.label "Exp. Month"
+/         %input#expiration_month(type="text" size="2" placeholder="MM" class="card-expiry-month")
+/         = f.label "Exp. Year"
+/         %input#expiration_year(type="text" size="4" placeholder="YYYY" class="card-expiry-year")
+/         = f.label "CVC", :style => 'text-transform: uppercase'
+/         %input#cvc(type="text" size="4" autocomplete="off" class="card-cvc")
+/     #form-right
+/       %h2
+/         Them
+/       .recipient
+/         = f.label "Name"
+/         = f.text_field :recipient_name
+/         .recipient_name-errors.error-message
+/         = f.label "Address"
+/         = f.text_field :recipient_address, :placeholder => "address"
+/         .recipient_address-errors.error-message
+/         = f.text_field :recipient_city, :placeholder => "city"
+/         .recipient_city-errors.error-message
 
-        = f.text_field :recipient_postal, :size => 10, :placeholder => "zip code"
-        .recipient_postal-errors.error-message
-        - unless Rails.env.production?
-          %a(href="javascript:testOrderForm()" class="btn btn-warning")
-            Fill Form
+/         = f.text_field :recipient_state, :size => 3, :placeholder => "state"
+/         .recipient_state-errors.error-message
 
-    .submit
-      = f.submit "Next &raquo;".html_safe, :class => 'btn btn-large btn-primary'
+/         = f.text_field :recipient_postal, :size => 10, :placeholder => "zip code"
+/         .recipient_postal-errors.error-message
+/         - unless Rails.env.production?
+/           %a(href="javascript:testOrderForm()" class="btn btn-warning")
+/             Fill Form
+
+/     .submit
+/       = f.submit "Next &raquo;".html_safe, :class => 'btn btn-large btn-primary'
 
     .clear
-        
+

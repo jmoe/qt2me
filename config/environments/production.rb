@@ -3,9 +3,9 @@ Qt2me::Application.configure do
 
   GA_TRACKER_ID ="UA-32475182-1"
   GA_TRACKER_DOMAIN = "qt2.me"
-  
-  config.force_ssl = true
-  
+
+  config.force_ssl = false
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
